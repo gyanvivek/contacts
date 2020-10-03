@@ -17,7 +17,7 @@ function RouteWithSubRoutes(route: any) {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes {...route} />

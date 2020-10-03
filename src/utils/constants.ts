@@ -1,0 +1,1 @@
+export const LOGIN_TITLE = "Sign in with Google";
