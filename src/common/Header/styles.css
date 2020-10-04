@@ -1,5 +1,4 @@
 .logout {
-  border: 1.5px solid #ffffff;
   margin-right: 64px;
 }
 
@@ -20,4 +19,26 @@
   display: flex;
   flex-direction: row;
   margin-left: 64px;
+}
+
+.header-text-name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.header-text-email {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.08em;
+  color: #ffffff;
 }
