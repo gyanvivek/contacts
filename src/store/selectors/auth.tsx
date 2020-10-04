@@ -1,3 +1,5 @@
 const isAuthenticated = (state:any )=> state.auth.isAuthenticated;
 
-export default { isAuthenticated };
+const loading = (state : any) => state.auth.loading;
+
+export default { isAuthenticated ,loading};
