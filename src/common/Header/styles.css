@@ -1,10 +1,6 @@
 .logout {
-  position: absolute;
-  left: 93.1%;
-  right: 4.69%;
-  top: 3.69%;
-  bottom: 91.71%;
   border: 1.5px solid #ffffff;
+  margin-right: 64px;
 }
 
 .header {
@@ -14,4 +10,14 @@
   left: 0px;
   top: 0px;
   background: linear-gradient(90.21deg, #053ed1 0%, #0f4eac 100%);
+  background-image: url('../../assets/header_bar.svg');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-detail {
+  display: flex;
+  flex-direction: row;
+  margin-left: 64px;
 }

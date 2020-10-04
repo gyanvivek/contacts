@@ -34,8 +34,13 @@ const data = [
 const Home = () => {
   return (
     <div className="container">
-      <Header />
+      <Header
+        image_url="../../abc"
+        name="gyan vievelk"
+        email="gyan vivek@gmail.com"
+      />
       <main className="home">
+        <h3 className="home-title">Contacts</h3>
         <div>
           {data.map(item => {
             return <ContactItem key={item.id} {...item} />;
