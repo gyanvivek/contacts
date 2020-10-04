@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import routes from "./routes";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function RouteWithSubRoutes(route: any) {
   return (
@@ -17,13 +19,15 @@ function RouteWithSubRoutes(route: any) {
 
 function App() {
   return (
-    <BrowserRouter >
-      <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes {...route} />
-        ))}
-      </Switch>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          {routes.map((route, i) => (
+            <RouteWithSubRoutes {...route} />
+          ))}
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
