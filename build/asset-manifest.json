@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2550eb36.chunk.css",
+    "main.js": "/static/js/main.9e818169.chunk.js",
+    "main.js.map": "/static/js/main.9e818169.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c51d566f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c51d566f.js.map",
+    "static/js/2.67cb3aaf.chunk.js": "/static/js/2.67cb3aaf.chunk.js",
+    "static/js/2.67cb3aaf.chunk.js.map": "/static/js/2.67cb3aaf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6c2f6571ff00ae0305be82d9a2856908.js": "/precache-manifest.6c2f6571ff00ae0305be82d9a2856908.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.2550eb36.chunk.css.map": "/static/css/main.2550eb36.chunk.css.map",
+    "static/js/2.67cb3aaf.chunk.js.LICENSE.txt": "/static/js/2.67cb3aaf.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/static/media/header_bar.6f1b6466.svg",
+    "static/media/contactimage.svg": "/static/media/contactimage.067f446b.svg",
+    "static/media/delete.svg": "/static/media/delete.0f23a15e.svg",
+    "static/media/google.svg": "/static/media/google.452e3b66.svg",
+    "static/media/logout.svg": "/static/media/logout.77efc25e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c51d566f.js",
+    "static/js/2.67cb3aaf.chunk.js",
+    "static/css/main.2550eb36.chunk.css",
+    "static/js/main.9e818169.chunk.js"
+  ]
+}
