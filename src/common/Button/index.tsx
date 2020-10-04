@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
+
+import './styles.css';
 
 export type ButtonProps = {
   text: string;
-  onClick: ()=> void;
+  onClick: () => void;
   disabled?: boolean;
 };
 

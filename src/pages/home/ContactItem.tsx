@@ -1,6 +1,7 @@
-import React from "react";
-import ContactImage from "../../common/ContactImage";
-import useHover from "../../hooks/useHover";
+import React from 'react';
+import ContactImage from '../../common/ContactImage';
+import Surface from '../../common/Surface';
+import useHover from '../../hooks/useHover';
 
 export type ContactItemProps = {
   imageUrl?: string;
@@ -17,17 +18,19 @@ const ContactItem = ({
   const [hoverRef, isHover] = useHover<HTMLDivElement>();
 
   return (
-    <div
-      className={isHover ? "contact-item-active" : "contact-item-deactive"}
+    <Surface
       ref={hoverRef}
+      style={{ padding: '8px 64px', marginBottom: '8px' }}
     >
-      <span>
-        <ContactImage />
-        <span> {name}</span>
-      </span>
-      <span>{email}</span>
-      <span>{phoneNumber}</span>
-    </div>
+      <div style={{ display: 'flex' }}>
+        <span>
+          <ContactImage />
+          <span> {name}</span>
+        </span>
+        <span>{email}</span>
+        <span>{phoneNumber}</span>
+      </div>
+    </Surface>
   );
 };
 

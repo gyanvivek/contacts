@@ -1,0 +1,7 @@
+.textinput {
+  width: 400px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(10, 69, 194, 1);
+  margin-bottom: 32px;
+}

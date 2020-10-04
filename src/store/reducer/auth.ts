@@ -1,13 +1,13 @@
-import { types , actions } from '../actions/auth';
+import { types, actions } from '../actions/auth';
 
 export const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   loading: false,
 };
 
-export default (oldState = initialState, action : actions.AuthAction) => {
+export default (oldState = initialState, action: actions.AuthAction) => {
   const state = JSON.parse(JSON.stringify(oldState));
-  const { type , data} = action;
+  const { type, data } = action;
   switch (type) {
     case types.AUTH_SUCCESS:
       return {
