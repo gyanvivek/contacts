@@ -1,14 +1,14 @@
 import React from 'react';
 import Logout from '../../assets/logout.svg';
 import './styles.css';
-import { GoogleLogout } from 'react-google-login';
+import { GoogleLogout, GoogleLogoutProps } from 'react-google-login';
 import ContactSvg from '../../assets/contactimage.svg';
 
 export type HeaderProps = {
   image_url?: string;
   email: string;
   name: string;
-  onLogout?: () => void;
+  onLogout: Function;
 };
 
 const Header = ({ name, email, image_url, onLogout }: HeaderProps) => {
@@ -26,14 +26,22 @@ const Header = ({ name, email, image_url, onLogout }: HeaderProps) => {
           '466588689475-3vn3gfoo72al6d4j74s4mtonuu4aftuf.apps.googleusercontent.com'
         }
         render={renderProps => (
-          <img
-            onClick={() => renderProps.onClick}
+          <input
+            type="image"
+            onClick={() => {
+              console.log('logout button click');
+              renderProps.onClick();
+            }}
             className="logout"
             src={Logout}
             alt=""
           />
         )}
-        onLogoutSuccess={onLogout}
+        onLogoutSuccess={() => {
+          console.log();
+          console.log('logout success');
+          onLogout();
+        }}
         onFailure={() => console.log('failure')}
       ></GoogleLogout>
     </div>

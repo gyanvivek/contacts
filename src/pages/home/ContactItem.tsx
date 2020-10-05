@@ -10,6 +10,7 @@ export type ContactItemProps = {
   email: string;
   phoneNumber: string;
   id: string;
+  onDelete: Function;
 };
 const ContactItem = ({
   name,
@@ -17,11 +18,18 @@ const ContactItem = ({
   phoneNumber,
   imageUrl,
   id,
+  onDelete,
 }: ContactItemProps) => {
   const [hoverRef, isHover] = useHover<HTMLDivElement>();
-  console.log(id);
+  console.log(id + '   hover ' + isHover);
+  const [enter, setEnter] = React.useState(false);
   return (
-    <div ref={hoverRef} className="contact-item">
+    <div
+      ref={hoverRef}
+      className="contact-item"
+      onMouseEnter={() => setEnter(true)}
+      onMouseLeave={() => setEnter(false)}
+    >
       {/* <div> {isHover ? <CheckBox /> : null}</div> */}
       <div className="contact-item-body">
         <span
@@ -43,10 +51,17 @@ const ContactItem = ({
       </div>
       <div className="contact-item-icon">
         {' '}
-        {isHover ? <img src={DeleteIcon} alt="" /> : null}
+        {enter ? (
+          <input
+            type="image"
+            src={DeleteIcon}
+            alt="Delete"
+            onClick={() => onDelete(id)}
+          />
+        ) : null}
       </div>
     </div>
   );
 };
 
-export default ContactItem;
+export default React.memo(ContactItem);

@@ -15,6 +15,8 @@ const Login = () => {
   const isloading = useSelector(authSelector.loading);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
   return (
     <div className="container">
       <div className="login-container">
@@ -35,8 +37,18 @@ const Login = () => {
             <span className="login-header" style={{ marginBottom: 32 }}>
               {LOGIN_TITLE}
             </span>
-            <TextInput placeholer="Email" />
-            <TextInput placeholer="Password" />
+            <TextInput
+              placeholer="Email"
+              onChange={(value: string) => {
+                setEmail(value);
+              }}
+            />
+            <TextInput
+              placeholer="Password"
+              onChange={(value: string) => {
+                setPassword(value);
+              }}
+            />
             <GoogleLogin
               clientId={
                 '466588689475-3vn3gfoo72al6d4j74s4mtonuu4aftuf.apps.googleusercontent.com'
@@ -44,7 +56,11 @@ const Login = () => {
               render={renderProps => (
                 <Button
                   text="SignIn"
-                  onClick={renderProps.onClick}
+                  onClick={() => {
+                    if (!email || !password) {
+                      // validation checks
+                    } else renderProps.onClick();
+                  }}
                   disabled={isloading}
                 />
               )}

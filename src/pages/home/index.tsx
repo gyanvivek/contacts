@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from '../../common/Header';
 import ContactItem from './ContactItem';
-import { useDispatch } from 'react-redux';
-import { types } from '../../store/actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { types } from '../../store/actions/contacts';
+import { types as authtypes } from '../../store/actions/auth';
+
+import authSelector from '../../store/selectors/auth';
+import contactSelector from '../../store/selectors/contact';
 import './styles.css';
 
 const data = [
@@ -34,24 +38,38 @@ const data = [
 
 const Home = () => {
   const dispatch = useDispatch();
+  const contact = useSelector(contactSelector.contacts);
+  const profileData = useSelector(authSelector.userData);
   return (
     <div className="container">
       <Header
-        image_url="../../abc"
-        name="gyan vievelk"
-        email="gyan vivek@gmail.com"
-        onLogout={() => dispatch({ type: types.AUTH_LOGOUT_SUCCESS })}
+        image_url={profileData.imageUrl}
+        name={profileData.name}
+        email={profileData.email}
+        onLogout={() => dispatch({ type: authtypes.AUTH_LOGOUT_SUCCESS })}
       />
       <main className="home">
-        <h3 className="home-title">Contacts ( {` ${data.length} `} )</h3>
+        <h3 className="home-title">Contacts ( {` ${contact.length} `} )</h3>
         <div className="contact-table-header">
           <span className="contact-table-column">NAME</span>
           <span className="contact-table-column">MAIL</span>
           <span className="contact-table-column">PHONE NUMBER</span>
         </div>
         <div>
-          {data.map(item => {
-            return <ContactItem key={item.id} {...item} />;
+          {contact.map((item: any) => {
+            return (
+              <ContactItem
+                key={item.id}
+                onDelete={(id: string) => {
+                  console.log('delete' + id);
+                  dispatch({
+                    type: types.DELETE_CONTACT_SUCCESS,
+                    data: { id },
+                  });
+                }}
+                {...item}
+              />
+            );
           })}
         </div>
       </main>

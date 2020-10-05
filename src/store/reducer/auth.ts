@@ -1,8 +1,16 @@
 import { types, actions } from '../actions/auth';
 
 export const initialState = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   loading: false,
+  data: {
+    profileObj: {
+      email: '',
+      googleId: '',
+      imageUrl: '',
+      name: '',
+    },
+  },
 };
 
 export default (oldState = initialState, action: actions.AuthAction) => {
@@ -14,6 +22,7 @@ export default (oldState = initialState, action: actions.AuthAction) => {
         ...state,
         isAuthenticated: true,
         loading: false,
+        data: data,
       };
     case types.AUTH_PENDING:
       return { ...state, isAuthenticated: false, loading: true };
